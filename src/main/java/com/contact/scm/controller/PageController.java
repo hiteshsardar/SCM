@@ -1,3 +1,8 @@
+/***********************************************************************
+ * Copyright (c) 2024
+ * owned by Hitesh Sardar
+ ***********************************************************************/
+
 package com.contact.scm.controller;
 
 import org.springframework.stereotype.Controller;
@@ -19,7 +24,7 @@ import jakarta.validation.Valid;
 @Controller
 public class PageController {
     
-    private UserService userService;
+    private final UserService userService;
 
     public PageController(UserService userService) {
         this.userService = userService;

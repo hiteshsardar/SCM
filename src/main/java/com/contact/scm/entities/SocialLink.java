@@ -1,3 +1,8 @@
+/***********************************************************************
+ * Copyright (c) 2024
+ * owned by Hitesh Sardar
+ ***********************************************************************/
+
 package com.contact.scm.entities;
 
 import org.springframework.data.annotation.Id;

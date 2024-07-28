@@ -1,7 +1,11 @@
+/***********************************************************************
+ * Copyright (c) 2024
+ * owned by Hitesh Sardar
+ ***********************************************************************/
+
 package com.contact.scm.services.impl;
 
 import java.io.IOException;
-import java.util.UUID;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import com.cloudinary.Cloudinary;
@@ -12,7 +16,7 @@ import com.contact.scm.services.ImageService;
 
 @Service
 public class ImageServiceImpl implements ImageService {
-    private Cloudinary cloudinary;
+    private final Cloudinary cloudinary;
 
     public ImageServiceImpl(Cloudinary cloudinary) {
         this.cloudinary = cloudinary;

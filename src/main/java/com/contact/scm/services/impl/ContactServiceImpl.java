@@ -1,3 +1,8 @@
+/***********************************************************************
+ * Copyright (c) 2024
+ * owned by Hitesh Sardar
+ ***********************************************************************/
+
 package com.contact.scm.services.impl;
 
 import java.lang.module.ResolutionException;
@@ -16,7 +21,7 @@ import com.contact.scm.services.ContactService;
 @Service
 public class ContactServiceImpl implements ContactService {
 
-    private ContactRepo contactRepo;
+    private final ContactRepo contactRepo;
 
     public ContactServiceImpl(ContactRepo contactRepo) {
         this.contactRepo = contactRepo;
