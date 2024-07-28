@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" data-th-replace="~{base :: parent(~{::#content}, ~{::title}, ~{::script})}">
+    <head>
+        <title data-th-text="${loggedInUser.name} + '| Dashboard'">Dashboard</title>
+    </head>
+    <body>
+        <div id="content">
+            <!-- if user logged in and user page -->
+            <div data-th-if="${loggedInUser}">
+                <div data-th-replace="~{user/sidebar :: user-sidebar}" />
+            </div>
+            <div class="sm:pl-64">
+                <h1>Welcome to Dashboard page</h1>
+            </div>
+        </div>
+        <script></script>
+    </body>
+</html>

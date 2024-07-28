@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" data-th-replace="~{base :: parent(~{::#content}, ~{::title}, ~{::script})}">
+    <head>
+        <title data-th-text="${loggedInUser.name} + '| SCM'">Profile</title>
+    </head>
+    <body>
+        <div id="content" class="sm:pl-64">
+            <!-- if user logged in and user page -->
+            <div data-th-if="${loggedInUser}">
+                <div data-th-replace="~{user/sidebar :: user-sidebar}" />
+            </div>
+
+            <h1>Welcome to Profile page</h1>
+        </div>
+        <script></script>
+    </body>
+</html>

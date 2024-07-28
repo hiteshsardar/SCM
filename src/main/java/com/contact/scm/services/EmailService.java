@@ -1,0 +1,6 @@
+package com.contact.scm.services;
+
+public interface EmailService {
+
+    void sendEmail(String to, String subject, String body);
+}
