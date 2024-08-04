@@ -181,7 +181,7 @@ public class ContactController {
         if(result.hasErrors()){
             // add message
             Message message = Message.builder().content("Please resolve the following errors !!!").type(MessageType.red).build();
-            session.setAttribute("message", message);
+            session.setAttribute(AppConstants.MESSAGE, message);
             return "user/update_contact_view";
         }
 
@@ -212,7 +212,7 @@ public class ContactController {
 
         // delete message
         Message message = Message.builder().content("Contact details for " + updateContact.getName() + "has updated successfully.").type(MessageType.yellow).build();
-        session.setAttribute("message", message);
+        session.setAttribute(AppConstants.MESSAGE, message);
         return "redirect:/user/contacts";
     }
 }

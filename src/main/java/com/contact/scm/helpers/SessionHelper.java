@@ -15,7 +15,7 @@ public class SessionHelper {
     public static void removeSession() {
         try {
             HttpSession session = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest().getSession();
-            session.removeAttribute("message");
+            session.removeAttribute(AppConstants.MESSAGE);
         } catch (Exception ex) {
             ex.printStackTrace();
         }
