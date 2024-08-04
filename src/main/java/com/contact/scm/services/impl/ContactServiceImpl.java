@@ -8,7 +8,6 @@ package com.contact.scm.services.impl;
 import java.lang.module.ResolutionException;
 import java.util.List;
 import java.util.UUID;
-
 import com.contact.scm.helpers.ResourceNotFoundException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
