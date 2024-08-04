@@ -5,6 +5,7 @@
 
 package com.contact.scm.controller;
 
+import com.contact.scm.helpers.AppConstants;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -74,7 +75,7 @@ public class PageController {
         if(rBindResult.hasErrors()) {
             // add message
             Message message = Message.builder().content("Please resolve the following errors !!!").type(MessageType.red).build();
-            session.setAttribute("message", message);
+            session.setAttribute(AppConstants.MESSAGE, message);
             return "register";
         }
         // save the data
@@ -91,7 +92,7 @@ public class PageController {
 
         // add message
         Message message = Message.builder().content("Registration successful. Verification link is sent to " + saveUser.getEmail() + ", please verify before login.").type(MessageType.green).build();
-        session.setAttribute("message", message);
+        session.setAttribute(AppConstants.MESSAGE, message);
         // redirect to the login page
         return "redirect:/register";
     }

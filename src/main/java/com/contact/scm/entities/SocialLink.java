@@ -15,7 +15,7 @@ import lombok.Data;
 public class SocialLink {
 
     @Id
-    private Long Id;
+    private Long id;
     private String link;
     private String title;
     @DBRef

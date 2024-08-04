@@ -5,13 +5,13 @@
 
 package com.contact.scm.helpers;
 
-public class ResourceNotForndException extends RuntimeException {
+public class ResourceNotFoundException extends RuntimeException {
 
-    public ResourceNotForndException(){
+    public ResourceNotFoundException(){
         super("Resources not Found");
     }
 
-    public ResourceNotForndException(String msg) {
+    public ResourceNotFoundException(String msg) {
         super(msg);
     }
 

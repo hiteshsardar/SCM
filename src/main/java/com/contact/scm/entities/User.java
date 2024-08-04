@@ -49,16 +49,17 @@ public class User implements UserDetails {
     private String providerUserId;
     private String emailToken;
 
+    @Builder.Default
     @ElementCollection(fetch = FetchType.EAGER)
     private List<String> rolList = new ArrayList<>();
 
+    @Builder.Default
     @DBRef
     private List<Contact> contacts = new ArrayList<>();
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        Collection<SimpleGrantedAuthority> roles = rolList.stream().map(role -> new SimpleGrantedAuthority(role)).toList();
-        return roles;
+        return rolList.stream().map(SimpleGrantedAuthority::new).toList();
     }
 
     @Override

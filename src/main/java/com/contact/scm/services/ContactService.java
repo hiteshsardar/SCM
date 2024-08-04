@@ -28,16 +28,16 @@ public interface ContactService {
     void deleteContact(String id);
 
     // search contacts by name
-    Page<Contact> serachByName(String nameKeyword, int page, int size,String sortBy, String sortDirection, User user);
+    Page<Contact> searchByName(String nameKeyword, int page, int size,String sortBy, String sortDirection, User user);
 
     // search contacts by email
-    Page<Contact> serachByEmail( String emailKeyword, int page, int size,String sortBy, String sortDirection, User user);
+    Page<Contact> searchByEmail( String emailKeyword, int page, int size,String sortBy, String sortDirection, User user);
 
     // search contacts by contact no
-    Page<Contact> serachByPhoneNo(String phoneNumberKeyword, int page, int size,String sortBy, String sortDirection, User user);
+    Page<Contact> searchByPhoneNo(String phoneNumberKeyword, int page, int size,String sortBy, String sortDirection, User user);
 
     // search contacts by user id
-    List<Contact> serachContactsByUserId(String userId);
+    List<Contact> searchContactsByUserId(String userId);
 
     // List of contacts
     Page<Contact> getByUser(User user, int page, int size,String sortBy, String sortDirection);

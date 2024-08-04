@@ -62,7 +62,7 @@ public class ContactController {
         if(result.hasErrors()){
             // add message
             Message message = Message.builder().content("Please resolve the following errors !!!").type(MessageType.red).build();
-            session.setAttribute("message", message);
+            session.setAttribute(AppConstants.MESSAGE, message);
             return "user/add_contact";
         }
 
@@ -90,7 +90,7 @@ public class ContactController {
         
         // add message
         Message message = Message.builder().content("Successfully added the contact of " + savedContact.getName()).type(MessageType.green).build();
-        session.setAttribute("message", message);
+        session.setAttribute(AppConstants.MESSAGE, message);
         return "redirect:/user/contacts/add";
     }
 
@@ -125,11 +125,11 @@ public class ContactController {
 
         Page<Contact> pageContacts = null;
         if (contactSearchForm.getField().equalsIgnoreCase("name")) {
-            pageContacts = contactService.serachByName(contactSearchForm.getKeyword(), page, size, sortBy, direction, user);
+            pageContacts = contactService.searchByName(contactSearchForm.getKeyword(), page, size, sortBy, direction, user);
         } else if (contactSearchForm.getField().equalsIgnoreCase("email")) {
-            pageContacts = contactService.serachByEmail(contactSearchForm.getKeyword(), page, size, sortBy, direction, user);
+            pageContacts = contactService.searchByEmail(contactSearchForm.getKeyword(), page, size, sortBy, direction, user);
         } else if (contactSearchForm.getField().equalsIgnoreCase("phoneNumber")) {
-            pageContacts = contactService.serachByPhoneNo(contactSearchForm.getKeyword(), page, size, sortBy, direction,user);
+            pageContacts = contactService.searchByPhoneNo(contactSearchForm.getKeyword(), page, size, sortBy, direction,user);
         }
 
         model.addAttribute("pageContacts", pageContacts);
@@ -146,7 +146,7 @@ public class ContactController {
 
         // delete message
         Message message = Message.builder().content("Contact has deleted successfully. ").type(MessageType.green).build();
-        session.setAttribute("message", message);
+        session.setAttribute(AppConstants.MESSAGE, message);
         return "redirect:/user/contacts";
     }
 

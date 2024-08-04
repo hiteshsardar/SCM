@@ -16,7 +16,7 @@ import com.contact.scm.entities.ProviderConverter;
 import com.contact.scm.entities.User;
 import com.contact.scm.helpers.AppConstants;
 import com.contact.scm.helpers.Helper;
-import com.contact.scm.helpers.ResourceNotForndException;
+import com.contact.scm.helpers.ResourceNotFoundException;
 import com.contact.scm.repositories.UserRepo;
 import com.contact.scm.services.EmailService;
 import com.contact.scm.services.UserService;
@@ -62,7 +62,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Optional<User> updateUser(User user) {
-        User getUser = userRepo.findById(user.getUserId()).orElseThrow(() -> new ResourceNotForndException("User not found !!"));
+        User getUser = userRepo.findById(user.getUserId()).orElseThrow(() -> new ResourceNotFoundException("User not found !!"));
         getUser.setName(user.getName());
         getUser.setEmail(user.getEmail());
         getUser.setPassword(user.getPassword());
@@ -81,7 +81,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void deleteUser(String userId) {
-        User getUser = userRepo.findById(userId).orElseThrow(() -> new ResourceNotForndException("User not found !!"));
+        User getUser = userRepo.findById(userId).orElseThrow(() -> new ResourceNotFoundException("User not found !!"));
         userRepo.delete(getUser);
     }
 
